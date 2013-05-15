@@ -7,7 +7,7 @@
 # ---------------------------------------------------------------------------
 
 # Import system modules
-import sys, string, os,  glob, tarfile, platform
+import os,  glob, tarfile, platform
 ##INPUT VAR##
 dir_to_untar='GIOGL-ValdaitationWB' #subfolder of this dir will be untar
 dir_untared='untared_all' #dir to store results (will be created if not exists)
@@ -17,7 +17,8 @@ if platform.system()=='Linux':
 elif platform.system()=='Windows':
     directory_rapideye='\\\\eligeo01.enge.ucl.ac.be\\lw01\\rapideye\\'   
 ##
-directory=os.path.normpath(os.path.join(directory_rapideye,dir_to_untar)
+directory=os.path.normpath(os.path.join(directory_rapideye,dir_to_untar))
+
 if os.path.isdir(os.path.normpath(os.path.join(directory_rapideye,dir_untared)))==0:
     os.mkdir(os.path.normpath(os.path.join(directory_rapideye,dir_untared)))
 
